@@ -4,10 +4,10 @@ import fetchInstanceClientSide from "@/lib/fetchApi/fetchInstanceClientSide";
 import React, { useEffect, useMemo, useState } from "react";
 import { BsSearch } from "react-icons/bs";
 import { GrClose } from "react-icons/gr";
-import LoadMoreButton from "./LoadMoreButton";
+import LoadMoreButton from "./Atoms/LoadMoreButton";
 import fetchMyPosts from "@/lib/fetchMyPosts";
 
-export function PopUpComponent({ handlePopup, moderator }) {
+export function PopUpComponent({type="/ai-tools/my-tools", handlePopup, moderator }) {
   const [postsObj, setPostsObj] = useState(null);
   const [searchQuery, setSearchQuery] = useState(null);
   const [inputValue, setInputValue] = useState(null);
@@ -18,7 +18,7 @@ export function PopUpComponent({ handlePopup, moderator }) {
   const fetchPosts = useMemo(
     () => async () => {
       const res = await fetchInstanceClientSide(
-        `/ai-tools/my-tools?query=${searchQuery || ""}&authorId=${
+        `${type}?query=${searchQuery || ""}&authorId=${
           moderator._id
         }`
       );
@@ -83,8 +83,7 @@ export function PopUpComponent({ handlePopup, moderator }) {
           type="button"
           className="absolute top-10 right-10 p-3 bg-base-200 rounded-full hover:bg-base-300 active:scale-95 shadow-sm hover:shadow-md z-50"
           onClick={(e) => {
-            console.log("clicked");
-            console.log(e.target);
+            
             handlePopup();
           }}
         >

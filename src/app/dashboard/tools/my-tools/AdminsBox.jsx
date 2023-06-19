@@ -11,10 +11,8 @@ async function fetchAdminsModerators() {
 export default async function AdminsBox() {
   const { admins, moderators } = await fetchAdminsModerators();
 
-  console.log({ admins, moderators });
-
   return (
-    <div className=" px-10 mt-10">
+    <div className="px-10 mt-10">
       <div className="prose prose-headings:text-gray-700 my-5">
         <h1>Admins</h1>
       </div>

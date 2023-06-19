@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { FiArrowUpRight } from "react-icons/fi";
+import DeleteBtn from "@/app/dashboard/components/Atoms/DeleteBtn";
 
 function ToolCard({
   type = "ai-tools",
@@ -9,6 +10,7 @@ function ToolCard({
   description,
   link,
   keywords,
+  className
 }) {
   return (
     <div

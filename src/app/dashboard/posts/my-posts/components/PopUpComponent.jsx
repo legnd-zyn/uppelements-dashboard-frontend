@@ -4,8 +4,8 @@ import fetchInstanceClientSide from "@/lib/fetchApi/fetchInstanceClientSide";
 import React, { useEffect, useMemo, useState } from "react";
 import { BsSearch } from "react-icons/bs";
 import { GrClose } from "react-icons/gr";
-import LoadMoreButton from "./LoadMoreButton";
 import fetchMyPosts from "@/lib/fetchMyPosts";
+import LoadMoreButton from "@/app/dashboard/components/Atoms/LoadMoreButton";
 
 export function PopUpComponent({ handlePopup, moderator }) {
   const [postsObj, setPostsObj] = useState(null);
@@ -21,10 +21,7 @@ export function PopUpComponent({ handlePopup, moderator }) {
         `/posts/my-posts?query=${searchQuery || ""}&authorId=${moderator._id}`
       );
 
-      console.log(res);
-
       const posts = await res.json();
-      console.log(posts);
 
       if (res.ok) {
         setPostsObj(posts);
@@ -81,8 +78,6 @@ export function PopUpComponent({ handlePopup, moderator }) {
           type="button"
           className="absolute top-10 right-10 p-3 bg-base-200 rounded-full hover:bg-base-300 active:scale-95 shadow-sm hover:shadow-md z-50"
           onClick={(e) => {
-            console.log("clicked");
-            console.log(e.target);
             handlePopup();
           }}
         >

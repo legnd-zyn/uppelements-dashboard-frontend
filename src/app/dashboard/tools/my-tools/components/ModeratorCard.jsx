@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useMemo, useState } from "react";
-import { PopUpComponent } from "./PopUpComponent";
+import { PopUpComponent } from "../../../components/PopUpComponent";
 
 function ModeratorCard({ moderatorObj }) {
   const [popupOpen, setPopupOpen] = useState(false);

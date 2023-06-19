@@ -4,7 +4,7 @@ import { FiArrowUpRight } from "react-icons/fi";
 import Link from "next/link";
 
 import { format } from "timeago.js";
-import DeleteBtn from "./DeleteBtn";
+import DeleteBtn from "./Atoms/DeleteBtn";
 
 const PostCard = ({
   category,

@@ -2,7 +2,7 @@
 import React, { Suspense, useEffect, useMemo, useState } from "react";
 import PostCard from "../../components/PostCard";
 import fetchMyPosts from "@/lib/fetchMyPosts";
-import LoadMoreButton from "./components/LoadMoreButton";
+import LoadMoreButton from "../../components/Atoms/LoadMoreButton";
 import fetchInstanceClientSide from "@/lib/fetchApi/fetchInstanceClientSide";
 import ToolCard from "./components/ToolCard";
 

@@ -15,13 +15,13 @@ function AuthValidButtons({ role: serverRole }) {
 
   return role && role === "guest" ? (
     <Link href={`/auth/login`}>
-      <button className="w-max border-2 rounded-md px-4 py-2 text-white bg-primary text-sm border-primary-focus font-medium transition-all active:scale-90">
+      <button className="w-max border-2 rounded-md px-4 py-2 text-white bg-primary text-sm border-primary-focus font-medium transition-all active:scale-95">
         Please login to continue to DashBoard
       </button>
     </Link>
   ) : (
     <Link href={`/dashboard`}>
-      <button className="w-max border-2 rounded-md px-4 py-2 text-white bg-primary text-sm border-primary-focus font-medium transition-all active:scale-90">
+      <button className="w-max border-2 rounded-md px-4 py-2 text-white bg-primary text-sm border-primary-focus font-medium transition-all active:scale-95">
         Let&apos;s Begin to DashBoard!
       </button>
     </Link>
